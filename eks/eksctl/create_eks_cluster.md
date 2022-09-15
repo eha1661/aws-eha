@@ -60,7 +60,6 @@ export KUBECONFIG=$(pwd)/config-cluster
 
 __________________________________________________________
 resource
-* [offial doc](https://eksctl.io/)
+* [Offial doc](https://eksctl.io/)
 * [Config file schema](https://eksctl.io/usage/schema/)
 
-eks create cluster --config-file=eks-config.yml --kubeconfig=./kubeconfig.cluster.yaml
