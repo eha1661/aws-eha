@@ -18,6 +18,16 @@ eksctl get cluster [--name=<name>][--region=<region>]
 eksctl create cluster --config-file=<path> --kubeconfig=./config-cluster
 ```
 
+* update the kubeconfig in order to connect with the cluster using kubectl
+ 1. update the default kubeconfig file ~/.kube/config
+ ``` bash
+eksctl delete cluster --name=<cluster-name>
+```
+2. or use KUBECONFIG environment variable to point to config file 
+``` bash
+export KUBECONFIG=$(pwd)/config-cluster
+```
+
 * Delete the cluster and its associated nodes
 ``` bash
 eksctl delete cluster --name=<cluster-name>
@@ -50,14 +60,6 @@ kubectl get service
 ```
 kubectl describe service hello-kubernetes
 ```
-
-
->  __note__
-* Configure kubeconfig Use KUBECONFIG environment variable to point to config file 
-``` bash
-export KUBECONFIG=$(pwd)/config-cluster
-```
-
 __________________________________________________________
 resource
 * [Offial doc](https://eksctl.io/)
