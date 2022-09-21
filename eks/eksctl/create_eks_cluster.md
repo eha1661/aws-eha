@@ -19,11 +19,11 @@ eksctl create cluster --config-file=<path> --kubeconfig=./config-cluster
 ```
 
 * update the kubeconfig in order to connect with the cluster using kubectl
- 1. update the default kubeconfig file ~/.kube/config
+> 1. update the default kubeconfig file ~/.kube/config
  ``` bash
-eksctl delete cluster --name=<cluster-name>
+aws eks update-kubeconfig --name <cluster-name>
 ```
-2. or use KUBECONFIG environment variable to point to config file 
+> 2. or use KUBECONFIG environment variable to point to config file 
 ``` bash
 export KUBECONFIG=$(pwd)/config-cluster
 ```
